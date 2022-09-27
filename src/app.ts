@@ -6,6 +6,8 @@ import routes from './utils/routes';
 
 const port = config.get<string>('port');
 
+console.log("1");
+
 const app = express();
 
 app.use(express.json());
