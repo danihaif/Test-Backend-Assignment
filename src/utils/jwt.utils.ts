@@ -8,10 +8,10 @@ export function signJwt (object: Object, options?: jwt.SignOptions | undefined) 
     return jwt.sign(object, privateKey, {...(options && options), algorithm: "RS256",});
 }
 
-export function importJwt (token: string) {
+export function verifyJwt (token: string) {
 
     try {
-        const decoded = jwt.verify(token, privateKey);
+        const decoded = jwt.verify(token, privateKey, { algorithms: ['RS256']});
         return {
             valid: false,
             expired: false,
@@ -25,5 +25,4 @@ export function importJwt (token: string) {
             decoded: null
         }
     }
-
 }

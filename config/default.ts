@@ -2,7 +2,7 @@ export default {
     port: 1337,
     dbUri: "mongodb://localhost:27017/enso-backend-assignment",
     saltWorkFactor: 10,
-    accessTokenTtl: '15m',
+    accessTokenTtl: '-1',
     refreshTokenTtl: '1y',
     publicKey: `-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQClWsbxReF2GGm58905ihK/02HI
