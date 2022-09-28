@@ -5,7 +5,7 @@ const privateKey = config.get<string>("privateKey");
 const publicKey = config.get<string>("publicKey");
 
 export function signJwt (object: Object, options?: jwt.SignOptions | undefined) {
-    return jwt.sign(object, privateKey, {...(options && options), algorithm: 'RS256'});
+    return jwt.sign(object, privateKey, {...(options && options), algorithm: "RS256",});
 }
 
 export function importJwt (token: string) {

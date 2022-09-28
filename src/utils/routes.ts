@@ -4,6 +4,8 @@ import validate from '../middleware/validteResource';
 import { createUserSchema } from '../schema/user.schema';
 import validateResource from "../middleware/validteResource";
 import { createUserHandler } from '../controllers/user.controller';
+import { createUserSessionHandler } from '../controllers/session.controller';
+import { createSessionSchema } from '../schema/session.schema';
 
 function routes(app: Express) {
   /**
@@ -45,6 +47,10 @@ function routes(app: Express) {
     *        description: Bad request
     */
    app.post("/api/users", validateResource(createUserSchema), createUserHandler);
+
+   app.post("/api/sessions", validateResource(createSessionSchema), createUserSessionHandler);
+
+
 }
 
 export default routes;
